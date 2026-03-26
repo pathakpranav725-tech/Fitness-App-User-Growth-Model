@@ -47,10 +47,16 @@ st.write(f"Peak Active Users: {int(peak_users)}")
 st.write(f"Peak occurs on Day: {peak_day}")
 
 # Graph
-plt.plot(active_list, label="Active Users")
-plt.plot(new_users_list, label="New Users")
-plt.plot(dropout_list, label="Dropouts")
-plt.legend()
+fig, ax = plt.subplots()
+
+ax.plot(active_list, label="Active Users")
+ax.plot(new_list, label="New Users")
+ax.plot(drop_list, label="Dropouts")
+
+ax.set_xlabel("Days")
+ax.set_ylabel("Users")
+ax.legend()
+
 
 st.pyplot(plt)
 
